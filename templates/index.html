@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NexaronCraft | Resmi Web Sitesi</title>
-    
-    <!-- YOUTUBE GİBİ SEKMEDE LOGONUN GÖZÜKMESİNİ SAĞLAYAN KRİTİK FA-VICON SATIRI -->
-    <link rel="icon" type="image/png" href="https://allorigins.win">
-    
+    <!-- Harika Minecraft İkonları İçin FontAwesome -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         :root {
-            --primary: #00d2d3;
+            --primary: #00d2d3; /* Parlak Mavi-Yeşil Neon */
             --primary-hover: #0abde3;
-            --secondary: #101f30; 
-            --dark: #070c12; 
-            --card-bg: rgba(11, 21, 32, 0.90);
+            --secondary: #0a222d; 
+            --dark: #040a10; 
+            --card-bg: rgba(10, 25, 35, 0.85);
             --text: #ffffff;
             --text-muted: #8395a7;
             --danger: #ff6b6b;
@@ -25,112 +23,108 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         
         body { 
-            background: linear-gradient(rgba(7, 12, 18, 0.85), rgba(7, 12, 18, 0.92)), 
+            background: linear-gradient(135deg, rgba(4, 32, 48, 0.93), rgba(7, 12, 22, 0.97)), 
                         url('https://allorigins.win') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             color: var(--text); 
             overflow-x: hidden; 
+            min-height: 100vh;
         }
-
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; background: rgba(7, 12, 18, 0.95); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 2px solid var(--primary); backdrop-filter: blur(5px); }
-        .logo-container { display: flex; align-items: center; gap: 10px; }
-        .logo-img { width: 35px; height: 34px; border-radius: 6px; border: 1px solid var(--primary); }
-        .logo { font-size: 22px; font-weight: 800; color: var(--primary); text-transform: uppercase; text-shadow: 0 0 10px rgba(0, 210, 211, 0.3); }
-        .nav-right { display: flex; align-items: center; gap: 20px; }
-        .nav-links { display: flex; list-style: none; gap: 20px; }
-        .nav-links a { color: var(--text); text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.95rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
         
-        .user-profile-nav { background: var(--secondary); padding: 5px 15px; border-radius: 20px; border: 1px solid var(--primary); font-size: 0.9rem; }
-        .user-profile-nav a { color: var(--danger); text-decoration: none; margin-left: 10px; font-weight: bold; }
-
-        .hero { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 140px 20px 40px 20px; }
-        .main-logo-hero { width: 180px; height: 180px; border-radius: 20px; margin-bottom: 20px; border: 3px solid var(--primary); box-shadow: 0 0 30px rgba(0, 210, 211, 0.4); }
-        .status-badge { background: rgba(0, 0, 0, 0.6); padding: 8px 25px; border-radius: 30px; margin-bottom: 20px; font-weight: 600; display: flex; align-items: center; gap: 10px; border: 1px solid rgba(0, 210, 211, 0.3); }
-        .status-dot { width: 12px; height: 12px; border-radius: 50%; background-color: var(--danger); box-shadow: 0 0 10px var(--danger); }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 15px; text-transform: uppercase; }
-        .hero h1 span { color: var(--primary); text-shadow: 0 0 20px rgba(0, 210, 211, 0.4); }
-        .hero p { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 20px; max-width: 600px; }
+        /* Crafter Tarzı Gelişmiş Üst Menü */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 8%; background: rgba(4, 10, 16, 0.96); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 2px solid var(--primary); backdrop-filter: blur(5px); box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
+        .logo { font-size: 24px; font-weight: 800; color: var(--primary); text-transform: uppercase; text-shadow: 0 0 15px rgba(0, 210, 211, 0.5); letter-spacing: 1px; }
+        .logo span { color: var(--text); }
+        .nav-right { display: flex; align-items: center; gap: 25px; }
+        .nav-links { display: flex; list-style: none; gap: 25px; }
+        .nav-links a { color: var(--text); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
+        .nav-links a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
         
-        .announcement { color: var(--amber); font-size: 1.4rem; font-weight: 800; margin-bottom: 35px; text-transform: uppercase; animation: pulse 2s infinite; letter-spacing: 1px; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.04); text-shadow: 0 0 20px rgba(254, 202, 87, 0.5); } 100% { transform: scale(1); } }
-        .ip-box { background: var(--secondary); padding: 15px 35px; border-radius: 50px; border: 2px solid var(--primary); cursor: pointer; font-size: 1.4rem; font-weight: 700; }
+        .user-profile-nav { background: var(--secondary); padding: 6px 18px; border-radius: 20px; border: 1px solid var(--primary); font-size: 0.9rem; display: flex; align-items: center; gap: 10px; box-shadow: 0 0 10px rgba(0,210,211,0.2); }
+        .user-profile-nav a { color: var(--danger); text-decoration: none; font-weight: bold; margin-left: 5px; }
 
-        .market-section { padding: 60px 8%; background: rgba(9, 16, 24, 0.93); text-align: center; border-top: 1px solid rgba(0, 210, 211, 0.3); backdrop-filter: blur(10px); }
-        .market-section h2 { font-size: 2.2rem; margin-bottom: 10px; text-transform: uppercase; }
+        /* Premium Hero Bölümü */
+        .hero { min-height: 65vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 160px 20px 60px 20px; }
+        .status-badge { background: rgba(0, 0, 0, 0.6); padding: 10px 30px; border-radius: 30px; margin-bottom: 25px; font-weight: 700; display: flex; align-items: center; gap: 12px; border: 1px solid rgba(0, 210, 211, 0.4); box-shadow: 0 0 15px rgba(0,210,211,0.1); }
+        .status-dot { width: 12px; height: 12px; border-radius: 50%; background-color: var(--danger); box-shadow: 0 0 12px var(--danger); }
+        
+        .hero h1 { font-size: 3.8rem; margin-bottom: 20px; text-transform: uppercase; font-weight: 900; letter-spacing: 2px; line-height: 1.1; }
+        .hero h1 span { color: var(--primary); text-shadow: 0 0 25px rgba(0, 210, 211, 0.6); }
+        .hero p { color: var(--text-muted); font-size: 1.25rem; margin-bottom: 30px; max-width: 650px; font-weight: 500; }
+        
+        .announcement { color: var(--amber); font-size: 1.4rem; font-weight: 800; margin-bottom: 40px; text-transform: uppercase; animation: pulse 2s infinite; letter-spacing: 2px; border: 1px dashed var(--amber); padding: 10px 30px; border-radius: 10px; background: rgba(254, 202, 87, 0.05); }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); text-shadow: 0 0 20px rgba(254, 202, 87, 0.6); } 100% { transform: scale(1); } }
+        
+        .ip-box { background: var(--secondary); padding: 16px 45px; border-radius: 50px; border: 2px solid var(--primary); cursor: pointer; font-size: 1.5rem; font-weight: 800; box-shadow: 0 0 20px rgba(0, 210, 211, 0.3); transition: 0.3s; }
+
+        /* Crafter Tipi Modern Mağaza */
+        .market-section { padding: 80px 8%; background: rgba(4, 12, 20, 0.95); text-align: center; border-top: 1px solid rgba(0, 210, 211, 0.3); backdrop-filter: blur(10px); }
+        .market-section h2 { font-size: 2.5rem; margin-bottom: 15px; text-transform: uppercase; font-weight: 900; }
         .market-section h2 span { color: var(--primary); }
-        .market-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top:30px; }
+        .market-subtitle { color: var(--text-muted); margin-bottom: 50px; font-size: 1.15rem; }
         
-        .market-card { background: var(--card-bg); border-radius: 14px; padding: 30px 20px; border: 1px solid rgba(0, 210, 211, 0.1); position: relative; overflow: hidden; transition: 0.3s; }
-        .market-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--primary); }
-        .market-card.vip::before { background: #ff9f43; }
-        .market-card.mvp::before { background: #1dd1a1; }
-        .market-card.nexaron::before { background: #00d2d3; }
-        .market-card:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: 0 10px 25px rgba(0,0,0,0.6); }
+        .market-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 30px; }
+        .market-card { background: var(--card-bg); border-radius: 16px; padding: 40px 25px; border: 1px solid rgba(0, 210, 211, 0.15); position: relative; overflow: hidden; transition: 0.3s ease-in-out; display: flex; flex-direction: column; justify-content: space-between; }
+        .market-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: var(--primary); }
+        .market-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 15px 35px rgba(0,0,0,0.7); }
         
-        .item-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; text-transform: uppercase; }
-        .item-features { list-style: none; margin-bottom: 25px; color: var(--text-muted); font-size: 0.95rem; line-height: 2; text-align: left; padding-left: 15px; }
-        .item-price { font-size: 1.8rem; font-weight: 800; margin-bottom: 20px; color: #fff; }
-        .item-price span { font-size: 1.1rem; color: var(--text-muted); text-decoration: line-through; margin-right: 8px; }
-
-        .content-section { padding: 60px 8%; display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; }
+        .item-icon { font-size: 3rem; margin-bottom: 20px; color: var(--primary); text-shadow: 0 0 10px rgba(0,210,211,0.3); }
+        .item-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        .item-features { list-style: none; margin-bottom: 30px; color: var(--text-muted); font-size: 0.95rem; line-height: 2.2; }
+        .item-features li { text-align: left; }
+        .item-features li i { color: var(--primary); margin-right: 8px; width: 20px; }
+        .item-price { font-size: 2rem; font-weight: 900; margin-bottom: 25px; color: #fff; }
+        
+        /* Profesyonel Grid İçerik */
+        .content-section { padding: 80px 8%; display: grid; grid-template-columns: 1.4fr 1fr; gap: 50px; }
         @media (max-width: 968px) { .content-section { grid-template-columns: 1fr; } }
         
-        .box { background: var(--card-bg); border-radius: 12px; padding: 30px; border: 1px solid rgba(0, 210, 211, 0.1); border-top: 4px solid var(--primary); backdrop-filter: blur(10px); }
-        .box h2 { font-size: 1.6rem; margin-bottom: 20px; text-transform: uppercase; color: var(--primary); }
+        .box { background: var(--card-bg); border-radius: 16px; padding: 35px; border: 1px solid rgba(0, 210, 211, 0.15); border-top: 4px solid var(--primary); backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+        .box h2 { font-size: 1.8rem; margin-bottom: 25px; text-transform: uppercase; color: var(--primary); font-weight: 800; display: flex; align-items: center; gap: 12px; }
         
         .leaderboard-table { width: 100%; border-collapse: collapse; text-align: left; }
-        .leaderboard-table th, .leaderboard-table td { padding: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        .rank-badge { background: var(--secondary); padding: 2px 8px; border-radius: 5px; font-weight: bold; }
-
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; color: var(--text-muted); font-size: 0.9rem; text-align: left; }
-        .form-group input { width: 100%; padding: 10px; background: var(--dark); border: 1px solid rgba(0, 210, 211, 0.2); border-radius: 6px; color: white; }
-        .btn { width: 100%; padding: 12px; background: var(--primary); border: none; border-radius: 6px; color: var(--dark); font-weight: 700; cursor: pointer; text-transform: uppercase; }
-        .switch-form-text { font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 15px; cursor: pointer; }
-        .switch-form-text span { color: var(--primary); text-decoration: underline; }
-        footer { background: rgba(7, 12, 18, 0.95); text-align: center; padding: 25px; border-top: 1px solid rgba(0, 210, 211, 0.1); color: var(--text-muted); }
+        .leaderboard-table th, .leaderboard-table td { padding: 14px 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .leaderboard-table th { font-weight: 700; color: var(--text-muted); text-transform: uppercase; font-size: 0.9rem; }
+        .rank-badge { background: var(--secondary); padding: 4px 10px; border-radius: 6px; font-weight: 800; color: var(--primary); border: 1px solid rgba(0,210,211,0.2); }
+        
+        /* Formlar */
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 0.95rem; font-weight: 600; text-align: left; }
+        .form-group input { width: 100%; padding: 12px 15px; background: var(--dark); border: 1px solid rgba(0, 210, 211, 0.25); border-radius: 8px; color: white; font-size: 1rem; }
+        .form-group input:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(0,210,211,0.3); outline: none; }
+        
+        .btn { width: 100%; padding: 14px; background: var(--primary); border: none; border-radius: 8px; color: var(--dark); font-weight: 800; font-size: 1rem; cursor: pointer; text-transform: uppercase; box-shadow: 0 4px 15px rgba(0,210,211,0.2); }
+        .btn:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,210,211,0.4); }
+        .switch-form-text { font-size: 0.9rem; color: var(--text-muted); text-align: center; margin-top: 20px; cursor: pointer; }
+        .switch-form-text span { color: var(--primary); font-weight: 700; text-decoration: underline; }
+        
+        footer { background: #02060b; text-align: center; padding: 40px; border-top: 1px solid rgba(0, 210, 211, 0.2); color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
+        footer a { color: var(--primary); text-decoration: none; font-weight: 800; }
     </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav>
-        <div class="logo-container">
-            <img src="https://allorigins.win" class="logo-img" alt="Logo">
-            <div class="logo">Nexaron<span>Craft</span></div>
-        </div>
+        <div class="logo">Nexaron<span>Craft</span></div>
         <div class="nav-right">
             <ul class="nav-links">
-                <li><a href="#market">Mağaza / VIP</a></li>
-                <li><a href="https://discord.gg" target="_blank">Discord</a></li>
+                <li><a href="#market"><i class="fa-solid fa-basket-shopping"></i> Mağaza</a></li>
+                <li><a href="#on-kayit-alani"><i class="fa-solid fa-user-plus"></i> Ön Kayıt</a></li>
+                <li><a href="https://discord.gg" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a></li>
             </ul>
-            <!-- PROFILE_ALANI -->
+            {% if kullanici_adi %}
+            <div class="user-profile-nav">
+                <i class="fa-solid fa-wallet" style="color: var(--amber);"></i> <span>{{ bakiye }} TL</span> 
+                | <i class="fa-solid fa-user-shield"></i> <strong>{{ kullanici_adi }}</strong> 
+                <a href="/cikis"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+            {% endif %}
         </div>
     </nav>
 
     <section class="hero">
-        <!-- Büyük Efsanevi Logo -->
-        <img src="https://allorigins.win" class="main-logo-hero" alt="Nexaron Logo">
-        
-        <div class="status-badge"><div class="status-dot"></div><span>ÇEVRİMİÇİ: <strong style="color: var(--danger);">0 OYUNCU</strong></span></div>
-        <h1>Madenleri Kaz, <br><span>Kutunun Ağası Ol!</span></h1>
-        <p>Gelişmiş Python altyapısı, özel madenleri ve adil kutu PvP rütbe ekosistemi sizi bekliyor.</p>
-        <div class="announcement">📢 YAKIN ZAMANDA AÇILACAKTIR</div>
-        <div class="ip-box"><span id="server-ip">açılmadı</span></div>
-    </section>
-
-    <!-- Yenilenen VIP Mağazası -->
-    <section class="market-section" id="market">
-        <h2>Sunucu <span>VIP Mağazası</span></h2>
-        <div class="market-grid">
-            <div class="market-card vip">
-                <div class="item-title" style="color: #ff9f43;">BRONZ VIP</div>
-                <ul class="item-features"><li>• Başlangıç VIP Kiti</li><li>• Chat'te [VIP] Tagı</li><li>• +%10 Maden Kazanma Şansı</li></ul>
-                <div class="item-price">45 TL</div>
-                <!-- İtemSatış Mağazası Açıldığında href kısmına linki yapıştırırsın -->
-                <a href="https://itemsatis.com" target="_blank" style="text-decoration:none;"><button class="btn" style="background: #ff9f43; color: #000;">Bakiye Yükle / Satın Al</button></a>
-            </div>
-            <div class="market-card mvp">
-                <div class="item-title" style="color: #1dd1a1;">ZÜMRÜT MVP</div>
-                <ul class="item-features"><li>• Gelişmiş MVP Kiti</li><li>• Chat'te Yeşil [MVP] Tagı</li><li>• Dolu Sunucuya Giriş Önceliği</li><li>• Özel Parçacık Efektleri</li></ul>
-                <div class="item-price"><span>120 TL</span> 85 TL</div>
+        <div class="status-badge">
+            <div class="status-dot"></div>
+            <span>SUNUCU DURUMU: <strong style="color: var(--danger);">YAKINDA</strong></span>
+        </div>
